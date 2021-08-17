@@ -12,7 +12,8 @@ const webpackConfig = {
         main: helpers.root('src', 'main'),
     },
     externals: {
-        vue : 'Vue'
+        vue : 'Vue',
+        'vue-router' : 'VueRouter'
     },
     resolve: {
         extensions: [ '.js', '.vue' ],
