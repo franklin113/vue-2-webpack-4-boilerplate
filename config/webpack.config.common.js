@@ -8,8 +8,11 @@ const isDev                = process.env.NODE_ENV === 'development';
 
 const webpackConfig = {
     entry: {
-        polyfill: '@babel/polyfill',
+        // polyfill: '@babel/polyfill',
         main: helpers.root('src', 'main'),
+    },
+    externals: {
+        vue : 'Vue'
     },
     resolve: {
         extensions: [ '.js', '.vue' ],
@@ -42,7 +45,7 @@ const webpackConfig = {
                 use: [
                     isDev ? 'vue-style-loader' : MiniCSSExtractPlugin.loader,
                     { loader: 'css-loader', options: { sourceMap: isDev } },
-                    { loader: 'sass-loader', options: { sourceMap: isDev } }
+                    // { loader: 'sass-loader', options: { sourceMap: isDev } }
                 ]
             },
             {
@@ -50,14 +53,14 @@ const webpackConfig = {
                 use: [
                     isDev ? 'vue-style-loader' : MiniCSSExtractPlugin.loader,
                     { loader: 'css-loader', options: { sourceMap: isDev } },
-                    { loader: 'sass-loader', options: { sourceMap: isDev } }
+                    // { loader: 'sass-loader', options: { sourceMap: isDev } }
                 ]
             }
         ]
     },
     plugins: [
         new VueLoaderPlugin(),
-        new HtmlPlugin({ template: 'index.html', chunksSortMode: 'dependency' })
+        new HtmlPlugin({ template: 'index.html' })
     ]
 };
 

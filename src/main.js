@@ -3,7 +3,7 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 // Import Vue App, routes, store
-import App from './App';
+import MainApp from './App';
 import routes from './routes';
 
 Vue.use(VueRouter);
@@ -16,7 +16,9 @@ const router = new VueRouter({
 });
 
 new Vue({
-    el: '#app',
-    render: h => h(App),
+    el: '#nmr-app',
+    components: {
+        MainApp,
+    },
     router
 });

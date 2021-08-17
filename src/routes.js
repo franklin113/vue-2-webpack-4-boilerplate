@@ -1,5 +1,5 @@
 import AppHome from '@/components/AppHome';
-const AppMedium = () => import('@/components/AppMedium');
+import AppMedium from '@/components/AppMedium';
 
 
 const routes = [

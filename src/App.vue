@@ -1,5 +1,6 @@
 <template>
   <div>
+    sfdsafds
     <router-link to="/">
       Home
     </router-link> | <router-link to="/medium">
